@@ -18,13 +18,48 @@ interface AuthResponse {
   token: string;
 }
 
+interface ForgotPasswordInput {
+  email: string;
+}
+
+interface ResetPasswordInput {
+  token: string;
+  password: string;
+}
+
+interface MessageResponse {
+  message: string;
+}
+
 export const login = async (data: LoginInput): Promise<AuthResponse> => {
   console.log(data);
   const response = await api.post("/auth/login", data);
   return response.data;
 };
 
-export const signUp = async ({ name, email, password }: SignUpInput): Promise<AuthResponse> => {
+export const signUp = async ({
+  name,
+  email,
+  password,
+}: SignUpInput): Promise<AuthResponse> => {
   const response = await api.post("/auth/register", { name, email, password });
+  return response.data;
+};
+
+export const forgotPassword = async ({
+  email,
+}: ForgotPasswordInput): Promise<MessageResponse> => {
+  const response = await api.post("/auth/forgot-password", { email });
+  return response.data;
+};
+
+export const resetPasswordApi = async ({
+  token,
+  password,
+}: ResetPasswordInput): Promise<MessageResponse> => {
+  const response = await api.post("/auth/reset-password", {
+    token,
+    password,
+  });
   return response.data;
 };
