@@ -138,7 +138,7 @@ const LoginPage = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full text-surface font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary hover:bg-primary-hover transition-colors cursor-pointer disabled:opacity-60"
+                className="w-full text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-btn-primary hover:bg-btn-primary-hover transition-colors cursor-pointer disabled:opacity-60"
               >
                 {loading ? "Logging in..." : "Login"}
               </button>

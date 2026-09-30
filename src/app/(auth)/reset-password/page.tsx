@@ -47,7 +47,13 @@ const ResetPasswordPage = () => {
 
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <p className="flex items-center mb-6 text-2xl font-semibold">
-          <Image src={logo} alt="logo" width={32} height={32} className="w-8 h-8 mr-2" />
+          <Image
+            src={logo}
+            alt="logo"
+            width={32}
+            height={32}
+            className="w-8 h-8 mr-2"
+          />
           Pocket Ledger
         </p>
 
@@ -56,11 +62,19 @@ const ResetPasswordPage = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl">
               Reset password
             </h1>
-            <p className="text-sm text-text-secondary">Enter your new password below.</p>
+            <p className="text-sm text-text-secondary">
+              Enter your new password below.
+            </p>
 
-            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit(submitForm)}>
+            <form
+              className="space-y-4 md:space-y-6"
+              onSubmit={handleSubmit(submitForm)}
+            >
               <div>
-                <label htmlFor="password" className="block mb-2 text-sm font-medium">
+                <label
+                  htmlFor="password"
+                  className="block mb-2 text-sm font-medium"
+                >
                   New password
                 </label>
                 <div className="relative">
@@ -77,7 +91,11 @@ const ResetPasswordPage = () => {
                     onClick={() => setShowPassword((prev) => !prev)}
                     className="absolute right-2 top-1/2 -translate-y-1/2 text-text-secondary"
                   >
-                    {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+                    {showPassword ? (
+                      <FaEyeSlash size={18} />
+                    ) : (
+                      <FaEye size={18} />
+                    )}
                   </button>
                 </div>
               </div>
@@ -85,7 +103,7 @@ const ResetPasswordPage = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full text-surface font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary hover:bg-primary-hover transition-colors cursor-pointer disabled:opacity-60"
+                className="w-full text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-btn-primary hover:bg-btn-primary-hover transition-colors cursor-pointer disabled:opacity-60"
               >
                 {loading ? "Resetting..." : "Reset password"}
               </button>

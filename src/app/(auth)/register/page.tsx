@@ -38,7 +38,9 @@ const RegisterPage = () => {
 
   useEffect(() => {
     if (error) {
-      toast.error(error.message || (error as any).error || "Registration failed");
+      toast.error(
+        error.message || (error as any).error || "Registration failed",
+      );
     }
   }, [error]);
 
@@ -79,7 +81,10 @@ const RegisterPage = () => {
               onSubmit={handleSubmit(submitForm)}
             >
               <div>
-                <label htmlFor="name" className="block mb-2 text-sm font-medium">
+                <label
+                  htmlFor="name"
+                  className="block mb-2 text-sm font-medium"
+                >
                   Your name
                 </label>
                 <input
@@ -93,7 +98,10 @@ const RegisterPage = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block mb-2 text-sm font-medium">
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-medium"
+                >
                   Your email
                 </label>
                 <input
@@ -107,7 +115,10 @@ const RegisterPage = () => {
               </div>
 
               <div>
-                <label htmlFor="password" className="block mb-2 text-sm font-medium">
+                <label
+                  htmlFor="password"
+                  className="block mb-2 text-sm font-medium"
+                >
                   Password
                 </label>
                 <div className="relative">
@@ -124,7 +135,11 @@ const RegisterPage = () => {
                     onClick={() => setShowPassword((prev) => !prev)}
                     className="absolute right-2 top-1/2 -translate-y-1/2 text-text-secondary"
                   >
-                    {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+                    {showPassword ? (
+                      <FaEyeSlash size={18} />
+                    ) : (
+                      <FaEye size={18} />
+                    )}
                   </button>
                 </div>
               </div>
@@ -132,7 +147,7 @@ const RegisterPage = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full text-surface font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary hover:bg-primary-hover transition-colors cursor-pointer disabled:opacity-60"
+                className="w-full text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-btn-primary hover:bg-btn-primary-hover transition-colors cursor-pointer disabled:opacity-60"
               >
                 {loading ? "Creating account..." : "Create account"}
               </button>

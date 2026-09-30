@@ -33,7 +33,6 @@ const ForgotPasswordPage = () => {
 
   return (
     <section className="bg-surface text-text min-h-screen relative">
-      
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <p className="flex items-center mb-6 text-2xl font-semibold">
           <Image
@@ -48,7 +47,7 @@ const ForgotPasswordPage = () => {
 
         <div className="w-full rounded-lg shadow-xl md:mt-0 sm:max-w-md xl:p-0 border border-border">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-             <Link
+            <Link
               href="/login"
               className=" flex items-center gap-2 text-sm text-text-secondary hover:text-primary transition-colors"
             >
@@ -89,7 +88,7 @@ const ForgotPasswordPage = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full text-surface font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary hover:bg-primary-hover transition-colors cursor-pointer disabled:opacity-60"
+                  className="w-full text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-btn-primary hover:bg-btn-primary-hover transition-colors cursor-pointer disabled:opacity-60"
                 >
                   {loading ? "Sending..." : "Send reset link"}
                 </button>
