@@ -32,7 +32,6 @@ interface MessageResponse {
 }
 
 export const login = async (data: LoginInput): Promise<AuthResponse> => {
-  console.log(data);
   const response = await api.post("/auth/login", data);
   return response.data;
 };
